@@ -1,0 +1,33 @@
+﻿<Window x:Class="CashMachine.dialogs_local_en.Update_Buyer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CashMachine.dialogs_local_en"
+        mc:Ignorable="d"
+        Title="Modify A Buyer" Icon="/favicon.ico" FontSize="14" Height="508.791" Width="542.096" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TextBlock Margin="29,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Number" Height="22" Width="100" HorizontalAlignment="Left" TextAlignment="Right"/>
+        <TextBlock Margin="72,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Name" Height="21" Width="57" HorizontalAlignment="Left" TextAlignment="Right"/>
+        <TextBlock Margin="31,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="TPIN" Height="22" Width="100" HorizontalAlignment="Left" TextAlignment="Right"/>
+        <TextBlock Margin="25,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Address" Height="22" Width="104" HorizontalAlignment="Left" TextAlignment="Right"/>
+        <TextBlock Margin="46,279,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Tel" Height="20" Width="83" HorizontalAlignment="Left" TextAlignment="Right"/>
+        <TextBlock Margin="11,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="TAX ACC Name" Height="20" Width="119" HorizontalAlignment="Left" TextAlignment="Right"/>
+
+        <TextBlock x:Name="textBlock1" Margin="157,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="" Height="27" Width="241" HorizontalAlignment="Left" TextAlignment="Center"/>
+        <TextBlock Margin="406,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="*" Height="13" Width="13" HorizontalAlignment="Left" TextAlignment="Right"/>
+        <TextBlock Margin="406,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="*" Height="13" Width="13" HorizontalAlignment="Left" TextAlignment="Right"/>
+        <TextBlock Margin="405,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="*" Height="13" Width="13" HorizontalAlignment="Left" TextAlignment="Right"/>
+        <TextBlock x:Name="textBlock2" Margin="427,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="" Height="22" Width="99" HorizontalAlignment="Left" TextAlignment="Right" FontSize="14" FlowDirection="RightToLeft"/>
+        <TextBlock x:Name="textBlock3" Margin="420,279,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="" Height="22" Width="105" HorizontalAlignment="Left" TextAlignment="Right" FontSize="14" FlowDirection="RightToLeft"/>
+
+        <TextBox x:Name="textBox1" Template="{StaticResource ResourceKey=FilletTextBox}" HorizontalAlignment="Left" Width="250" Height="30" Margin="151,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MaxLength="50"/>
+        <TextBox x:Name="textBox2" Template="{StaticResource ResourceKey=FilletTextBox}" HorizontalAlignment="Left" Width="250" Height="30" Margin="152,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MaxLength="10" LostFocus="textBox2_LostFocus" TextChanged="textBox2_TextChanged"/>
+        <TextBox x:Name="textBox3" Template="{StaticResource ResourceKey=FilletTextBox}" HorizontalAlignment="Left" Width="250" Height="30" Margin="152,334,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MaxLength="100"/>
+        <TextBox x:Name="textBox4" Template="{StaticResource ResourceKey=FilletTextBox}" ToolTip="the Tel is allowed to only include 0-9 spaces () + -" HorizontalAlignment="Left" Width="250" Height="30" Margin="152,273,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MaxLength="18" TextChanged="textBox4_TextChanged"/>
+        <TextBox x:Name="textBox5" Template="{StaticResource ResourceKey=FilletTextBox}" HorizontalAlignment="Left" Width="250" Height="30" Margin="151,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MaxLength="50"/>
+
+        <Button x:Name="button1" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Submit" HorizontalAlignment="Left" Margin="236,404,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="button1_Click"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,14 @@
+﻿<Window x:Class="CashMachine.Login_EN"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CashMachine"
+        mc:Ignorable="d"
+        Title="ECR Software" Icon="favicon.ico" Height="340.431" Width="375.14" FontSize="14" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <GroupBox Header="Login Windows" Margin="28,25,35.667,35" BorderThickness="1"/>
+        <Button Content="SIGN IN" Style="{StaticResource ResourceKey=MyWpfButton}" HorizontalAlignment="Left" Margin="130,150,0,0" VerticalAlignment="Top" Width="95" Height="34" Click="LoginLocal_Click" FontSize="14" Cursor="Hand">
+        </Button>
+    </Grid>
+</Window>

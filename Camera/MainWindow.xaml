@@ -1,0 +1,100 @@
+﻿<Window x:Class="CameraCapture.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CameraCapture"
+        xmlns:WinFormControls="clr-namespace:Emgu.CV.UI;assembly=Emgu.CV.UI"
+        mc:Ignorable="d"
+        xmlns:WinFormHost="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+        Title="万用表数字识别器" Icon="favicon.ico" FontSize="12" Height="598" Width="1034.334" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+    <Grid>
+        <!--摄像头画面-->
+        <GroupBox Header="摄像头画面" Margin="21,16,0,0" Width="265" Height="245" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="55,232,0,0" VerticalAlignment="Top" Text="" TextAlignment="Right"/>
+        <RadioButton x:Name="radioButton_local" GroupName="radioButton" Content="本地" IsChecked="True" HorizontalAlignment="Left" Margin="47,227,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="radioButton_usb" GroupName="radioButton" Content="USB" HorizontalAlignment="Left" Margin="119,227,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button1" Content="打开" HorizontalAlignment="Left" Margin="196,222,0,0" VerticalAlignment="Top" Width="61" Click="button1_Click" Height="22"/>
+        <!--<TextBlock HorizontalAlignment="Left" Margin="198,42,0,0" VerticalAlignment="Top" Text="摄像头画面" TextAlignment="Right"/>-->
+        <WindowsFormsHost Margin="39,39,0,0" Width="225" Height="170" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <WinFormControls:ImageBox x:Name="imageBox1" BorderStyle="FixedSingle" SizeMode="StretchImage"/>
+        </WindowsFormsHost>
+        <!--边距距离调整 start 640*480(默认)-->
+        <GroupBox Header="数字框参数调整（单位：像素）" Margin="300,18,0,0" Width="265" Height="245" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="316,54,0,0" VerticalAlignment="Top" Text="当前摄像头画面像素：" TextAlignment="Right"/>
+        <TextBlock x:Name="textblock1" HorizontalAlignment="Left" Margin="441,55,0,0" VerticalAlignment="Top" Text="" TextAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Left" Margin="319,87,0,0" VerticalAlignment="Top" Text="类型选择：" TextAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Left" Margin="323,125,0,0" VerticalAlignment="Top" Text="左边距：" TextAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Left" Margin="437,126,0,0" VerticalAlignment="Top" Text="顶边距：" TextAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Left" Margin="325,171,0,0" VerticalAlignment="Top" Text="宽  度：" TextAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Left" Margin="442,170,0,0" VerticalAlignment="Top" Text="高  度：" TextAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Left" Margin="315,217,0,0" VerticalAlignment="Top" Text="数字位数：" ToolTip="指万用表最多显示的数字位数" TextAlignment="Right"/>
+        <!--类型选择框-->
+        <ComboBox x:Name="comboBox2" HorizontalAlignment="Left" Margin="385,84,0,0" VerticalAlignment="Top" Width="147" SelectedIndex="0" DropDownClosed="comboBox2_DropDownClosed">
+            <ComboBoxItem Content="型号01"></ComboBoxItem>
+            <ComboBoxItem Content="型号02"></ComboBoxItem>
+            <ComboBoxItem Content="型号03"></ComboBoxItem>
+            <ComboBoxItem Content="型号04"></ComboBoxItem>
+            <ComboBoxItem Content="型号05"></ComboBoxItem>
+            <ComboBoxItem Content="型号06"></ComboBoxItem>
+            <ComboBoxItem Content="型号07"></ComboBoxItem>
+        </ComboBox>
+        <TextBox x:Name="left" Text=""  HorizontalAlignment="Left" VerticalAlignment="Top" Width="45" Height="28" Margin="371,119,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="top" Text=""  HorizontalAlignment="Left" VerticalAlignment="Top" Width="45" Height="28" Margin="486,120,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="width" Text=""  HorizontalAlignment="Left" VerticalAlignment="Top" Width="45" Height="28" Margin="372,165,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="height" Text=""  HorizontalAlignment="Left" VerticalAlignment="Top" Width="45" Height="28" Margin="486,163,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
+        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Margin="376,214,0,0" VerticalAlignment="Top" Width="44" SelectedValuePath="Tag">
+            <ComboBoxItem Content="3" Tag="3"></ComboBoxItem>
+            <ComboBoxItem Content="4" Tag="4"></ComboBoxItem>
+            <ComboBoxItem Content="5" Tag="5"></ComboBoxItem>
+            <ComboBoxItem Content="6" Tag="6"></ComboBoxItem>
+        </ComboBox>
+        <Button x:Name="button3" Content="提交" HorizontalAlignment="Left" Margin="465,215,0,0" VerticalAlignment="Top" Width="61" Click="button3_Click" Height="22"/>
+        <!--边距距离调整 end-->
+
+        <!--截图画面-->
+        <TextBlock HorizontalAlignment="Left" Margin="108,450,0,0" VerticalAlignment="Top" Text="截图原画面" TextAlignment="Right"/>
+        <WindowsFormsHost  Margin="58,297,0,0" Width="169" Height="134" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <WinFormControls:ImageBox x:Name="imageBox2" BorderStyle="FixedSingle" SizeMode="StretchImage" FunctionalMode="Minimum"/>
+        </WindowsFormsHost>
+        <!--打开 抓取 按钮-->
+
+        <Button x:Name="button2" Content="抓取" HorizontalAlignment="Left" Margin="662,119,0,0" VerticalAlignment="Top" Width="61" Click="button2_Click" Height="22"/>
+        <!--识别出的内容-->
+        <TextBlock HorizontalAlignment="Left" Margin="320,508,0,0" VerticalAlignment="Top" Text="识别出的数字" TextAlignment="Right"/>
+        <TextBox x:Name="textBox1" Text=""  HorizontalAlignment="Left" Width="147" Margin="406,494,0,32.667" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
+        <!--测试用的显示框 start-->
+        <WindowsFormsHost Margin="255,295,0,0" Width="153" Height="135" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <WinFormControls:ImageBox x:Name="imageBox3" BorderStyle="FixedSingle" SizeMode="StretchImage"  FunctionalMode="Minimum"/>
+        </WindowsFormsHost>
+        <WindowsFormsHost  Margin="451,299,0,0" Width="161" Height="132" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <WinFormControls:ImageBox x:Name="imageBox4" BorderStyle="FixedSingle" SizeMode="StretchImage"  FunctionalMode="Minimum"/>
+        </WindowsFormsHost>
+        <WindowsFormsHost  Margin="660,327,0,0" Width="141" Height="78" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <WinFormControls:ImageBox x:Name="imageBox5" BorderStyle="FixedSingle" SizeMode="StretchImage"  FunctionalMode="Minimum"/>
+        </WindowsFormsHost>
+        <WindowsFormsHost  Margin="837,328,0,0" Width="142" Height="71" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <WinFormControls:ImageBox x:Name="imageBox6" BorderStyle="FixedSingle" SizeMode="StretchImage"  FunctionalMode="Minimum"/>
+        </WindowsFormsHost>
+        <!--<WindowsFormsHost  Margin="886,350,0,0" Width="144" Height="111" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <WinFormControls:ImageBox x:Name="imageBox7" BorderStyle="FixedSingle" SizeMode="StretchImage"  FunctionalMode="Minimum"/>
+        </WindowsFormsHost>
+        <WindowsFormsHost  Margin="480,492,0,0" Width="127" Height="53" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <WinFormControls:ImageBox x:Name="imageBox8" BorderStyle="FixedSingle" SizeMode="StretchImage"  FunctionalMode="Minimum"/>
+        </WindowsFormsHost>
+        <WindowsFormsHost  Margin="624,483,0,0" Width="105" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <WinFormControls:ImageBox x:Name="imageBox9" BorderStyle="FixedSingle" SizeMode="StretchImage"  FunctionalMode="Minimum"/>
+        </WindowsFormsHost>
+        <WindowsFormsHost  Margin="767,492,0,0" Width="121" Height="46" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <WinFormControls:ImageBox x:Name="imageBox10" BorderStyle="FixedSingle" SizeMode="StretchImage"  FunctionalMode="Minimum"/>
+        </WindowsFormsHost>
+        <WindowsFormsHost  Margin="913,492,0,0" Width="108" Height="53" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <WinFormControls:ImageBox x:Name="imageBox11" BorderStyle="FixedSingle" SizeMode="StretchImage"  FunctionalMode="Minimum"/>
+        </WindowsFormsHost>-->
+        <TextBlock HorizontalAlignment="Left" Margin="306,447,0,0" VerticalAlignment="Top" Text="灰度图" TextAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Left" Margin="522,450,0,0" VerticalAlignment="Top" Text="二值图" TextAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Left" Margin="711,447,0,0" VerticalAlignment="Top" Text="数字区域图" TextAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Left" Margin="874,445,0,0" VerticalAlignment="Top" Text="数字分割图" TextAlignment="Right"/>
+        <!--测试用的显示框 end-->
+    </Grid>
+</Window>

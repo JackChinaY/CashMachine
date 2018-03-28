@@ -1,0 +1,42 @@
+﻿<Window x:Class="CheckProject.dialogs.Add_Local"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CheckProject.dialogs"
+        xmlns:TimeTool="clr-namespace:Loya.Dameer;assembly=Loya.Dameer"
+        mc:Ignorable="d"
+        Title="新增会议" Icon="/favicon.ico" Height="671.826" Width="618.095" FontSize="13" WindowStartupLocation="CenterScreen">
+    <Border BorderBrush="Black" BorderThickness="0,1,0,0">
+        <Grid>
+            <TextBlock Margin="40,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="会议级别" Height="22" Width="95" HorizontalAlignment="Left" TextAlignment="Right"/>
+            <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Margin="151,31,0,0" VerticalAlignment="Top" Width="324" Height="27" SelectedIndex="0"  VerticalContentAlignment="Center">
+                <ComboBoxItem Content="院级"/>
+                <ComboBoxItem Content="校级"/>
+            </ComboBox>
+
+            <TextBlock Margin="77,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="会议时间" Height="20" Width="60" HorizontalAlignment="Left" TextAlignment="Right" />
+            <DatePicker HorizontalAlignment="Left" Margin="154,81,0,0" VerticalAlignment="Top" Width="321"/>
+            <!--<TimeTool:Dameer Margin="375,259,0,342.333" Format="Custom" CustomFormat="yyyy-MM-dd HH:mm:ss" ShowCheckBox="False" HorizontalAlignment="Left" Width="216"/>-->
+
+            <TextBlock Margin="77,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="会议地点" Height="20" Width="60" HorizontalAlignment="Left" TextAlignment="Right" />
+            <TextBox x:Name="textBox1" HorizontalAlignment="Left" Width="320" Height="27" Margin="156,125,0,0" VerticalAlignment="Top" FontSize="11" VerticalContentAlignment="Center"/>
+
+            <TextBlock Margin="77,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="与会人员" Height="20" Width="60" HorizontalAlignment="Left" TextAlignment="Right" />
+            <TextBox x:Name="textBox1_Copy" HorizontalAlignment="Left" Width="321" Height="27" Margin="156,175,0,0" VerticalAlignment="Top" FontSize="11" VerticalContentAlignment="Center"/>
+            <Button Content="..." HorizontalAlignment="Left" Margin="492,174,0,0" VerticalAlignment="Top" Width="32" Height="27" Click="button2_Click"/>
+
+            <TextBlock Margin="77,238,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="会议议题" Height="20" Width="60" HorizontalAlignment="Left" TextAlignment="Right" />
+            <TextBox x:Name="textBox2_Copy" HorizontalAlignment="Left" Width="322" Height="27" Margin="156,235,0,0" VerticalAlignment="Top" FontSize="11" VerticalContentAlignment="Center"/>
+
+            <TextBlock Margin="78,388,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="会议正文" Height="20" Width="60" HorizontalAlignment="Left" TextAlignment="Right"></TextBlock>
+            <TextBox x:Name="textBox3" HorizontalAlignment="Left" Width="322" Height="181" Margin="158,295,0,0" VerticalAlignment="Top" FontSize="11" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5"/>
+
+            <TextBlock Margin="77,518,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="附件" Height="20" Width="60" HorizontalAlignment="Left" TextAlignment="Right" />
+            <TextBox x:Name="textBox4" HorizontalAlignment="Left" Width="323" Height="27" Margin="156,514,0,0" VerticalAlignment="Top" FontSize="11" VerticalContentAlignment="Center"/>
+            <Button Content="..." HorizontalAlignment="Left" Margin="494,514,0,0" VerticalAlignment="Top" Width="32" Height="27" Click="button2_Click"/>
+
+            <Button Content="提交" HorizontalAlignment="Left" Margin="265,576,0,0" VerticalAlignment="Top" Width="70" Height="30" Click="button_Click"/>
+        </Grid>
+    </Border>
+</Window>

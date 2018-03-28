@@ -1,0 +1,20 @@
+﻿<Window x:Class="CashMachine.dialogs_local_en.Update_Department"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CashMachine.dialogs_local_en"
+        mc:Ignorable="d"
+        Title="Modify Department Associate" Icon="/favicon.ico" FontSize="14" Height="331.346" Width="521.429" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TextBlock Text="Dept No" Margin="29,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="100" HorizontalAlignment="Left" TextAlignment="Right"></TextBlock>
+        <TextBlock Text="Plu No" Margin="48,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="81" HorizontalAlignment="Left" TextAlignment="Right" />
+
+        <TextBox x:Name="textBox2_5_1" IsEnabled="False" Template="{StaticResource ResourceKey=FilletTextBox}" HorizontalAlignment="Left" Width="250" Height="30" Margin="151,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox2_5_2" IsEnabled="False" Template="{StaticResource ResourceKey=FilletTextBox}" HorizontalAlignment="Left" Width="250" Height="30" Margin="151,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+        <Button x:Name="button2_5_1" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Submit" HorizontalAlignment="Left" Margin="206,226,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="button2_5_1_Click"/>
+        <Button x:Name="button2_5_2" Content="..." HorizontalAlignment="Left" Margin="415,138,0,0" VerticalAlignment="Top" Width="37" Height="30" Click="button2_5_2_Click"/>
+
+    </Grid>
+</Window>

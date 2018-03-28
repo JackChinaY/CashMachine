@@ -1,0 +1,99 @@
+﻿<Window x:Class="CheckProject.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CheckProject"
+        mc:Ignorable="d"
+        Title="高等学院党政会议记录云管理系统-江苏科技大学" Icon="favicon.ico" Height="381.918" Width="655.135" FontSize="14" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <!--离线登录-->
+        <GroupBox Header="离线登录" Margin="28,25,335.667,20.667" BorderThickness="3"/>
+        <!--学院选择框-->
+        <TextBlock  HorizontalAlignment="Left" Margin="52,72,0,0" Text="学   院" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" Width="47"/>
+        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Margin="108,70,0,0" VerticalAlignment="Top" Width="158" SelectedIndex="0" Height="29" VerticalContentAlignment="Center">
+            <ComboBoxItem Content="计算机学院"></ComboBoxItem>
+            <ComboBoxItem Content="型号02"></ComboBoxItem>
+            <ComboBoxItem Content="型号03"></ComboBoxItem>
+            <ComboBoxItem Content="型号04"></ComboBoxItem>
+            <ComboBoxItem Content="型号05"></ComboBoxItem>
+            <ComboBoxItem Content="型号06"></ComboBoxItem>
+            <ComboBoxItem Content="型号07"></ComboBoxItem>
+        </ComboBox>
+        <!--角色选择框-->
+        <TextBlock  HorizontalAlignment="Left" Margin="52,125,0,0" Text="角   色" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" Width="47"/>
+        <ComboBox x:Name="comboBox2" HorizontalAlignment="Left" Margin="108,121,0,0" VerticalAlignment="Top" Width="159" SelectedIndex="0" Height="29" VerticalContentAlignment="Center">
+            <ComboBoxItem Content="院办事员"></ComboBoxItem>
+            <ComboBoxItem Content="型号02"></ComboBoxItem>
+            <ComboBoxItem Content="型号03"></ComboBoxItem>
+        </ComboBox>
+        <TextBlock  HorizontalAlignment="Left" Margin="52,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="用户名" Height="19" Width="47" FontSize="14"/>
+        <TextBlock  HorizontalAlignment="Left" Margin="50,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="密    码" Height="19" Width="47" FontSize="14"/>
+        <TextBox x:Name="textBox11" Text="李四" HorizontalAlignment="Left" Width="160" Height="30" Margin="108,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+        <PasswordBox x:Name="textBox21" Password="123456" HorizontalAlignment="Left" Width="160" Height="30" Margin="108,213,0,0"  VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+        <Button x:Name="button11" Content="登 录" ToolTip="在线登录：查看和管理的是云端数据库中数据" HorizontalAlignment="Left" Margin="118,270,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="button1_Click"/>
+
+        <!--<GroupBox Header="离线登录" Margin="28,25,331,72.667" BorderThickness="3"/>
+        <Button Content="登 录" ToolTip="离线登录：查看和管理的是本地电脑中数据库的数据" HorizontalAlignment="Left" Margin="95,105,0,0" VerticalAlignment="Top" Width="96" Height="81" Click="LoginLocal_Click" FontSize="16" Cursor="Hand">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10" SnapsToDevicePixels="true" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        -->
+        <!--鼠标悬浮时按钮颜色-->
+        <!--
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" Value="#FF979797"/>
+                        </Trigger>
+                        -->
+        <!--鼠标按下时按钮颜色-->
+        <!--
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="Background" Value="#FF6C6D6D"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>-->
+        <!--在线登录-->
+        <GroupBox Header="在线登录" Margin="340,26,22.667,19.667" BorderThickness="3"/>
+        <!--学院选择框-->
+        <TextBlock  HorizontalAlignment="Left" Margin="367,71,0,0" Text="学   院" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" Width="47"/>
+        <ComboBox x:Name="comboBox3" HorizontalAlignment="Left" Margin="423,69,0,0" VerticalAlignment="Top" Width="158" SelectedIndex="0" Height="29" VerticalContentAlignment="Center">
+            <ComboBoxItem Content="计算机学院"></ComboBoxItem>
+            <ComboBoxItem Content="型号02"></ComboBoxItem>
+            <ComboBoxItem Content="型号03"></ComboBoxItem>
+            <ComboBoxItem Content="型号04"></ComboBoxItem>
+            <ComboBoxItem Content="型号05"></ComboBoxItem>
+            <ComboBoxItem Content="型号06"></ComboBoxItem>
+            <ComboBoxItem Content="型号07"></ComboBoxItem>
+        </ComboBox>
+        <!--角色选择框-->
+        <TextBlock  HorizontalAlignment="Left" Margin="367,124,0,0" Text="角   色" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" Width="47"/>
+        <ComboBox x:Name="comboBox4" HorizontalAlignment="Left" Margin="423,120,0,0" VerticalAlignment="Top" Width="159" SelectedIndex="0" Height="29" VerticalContentAlignment="Center">
+            <ComboBoxItem Content="校管理员"></ComboBoxItem>
+            <ComboBoxItem Content="院审核员"></ComboBoxItem>
+            <ComboBoxItem Content="院办事员"></ComboBoxItem>
+        </ComboBox>
+        <TextBlock  HorizontalAlignment="Left" Margin="365,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="用户名" Height="19" Width="47"/>
+        <TextBlock  HorizontalAlignment="Left" Margin="364,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="密    码" Height="19" Width="47"/>
+        <TextBox x:Name="textBox1" Text="李四" HorizontalAlignment="Left" Width="160" Height="30" Margin="424,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+        <PasswordBox x:Name="textBox2" Password="123456" HorizontalAlignment="Left" Width="160" Height="30" Margin="424,217,0,0"  VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+        <Button x:Name="button1" Content="登 录" ToolTip="在线登录：查看和管理的是云端数据库中数据" HorizontalAlignment="Left" Margin="451,270,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="button2_Click"/>
+        <TextBlock  HorizontalAlignment="Left" Margin="521,16,0,0" Text="当前网络状态：可用" TextWrapping="Wrap" VerticalAlignment="Top" Height="16" Width="100" FontSize="10"/>
+        <!--网页登录-->
+        <!--<TextBlock  HorizontalAlignment="Left" Margin="53,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top"  Height="19" Width="78">
+            <Hyperlink NavigateUri="http://47.93.232.64:8080/CashMachine/" Click="LoginOnline_Click">网页版登录</Hyperlink>
+        </TextBlock>-->
+        <!--在线注册-->
+        <!--<TextBlock  HorizontalAlignment="Left" Margin="252,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top"  Height="19" Width="68">
+            <Hyperlink NavigateUri="http://47.93.232.64:8080/CashMachine/register.html" Click="Register_Click" >在线注册</Hyperlink>
+        </TextBlock>-->
+        <!--忘记密码？-->
+        <!--<TextBlock  HorizontalAlignment="Left" Margin="466,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top"  Height="19" Width="77">
+            <Hyperlink NavigateUri="http://47.93.232.64:8080/CashMachine/backpassword.html" Click="Backpassword_Click" >忘记密码？</Hyperlink>
+        </TextBlock>-->
+    </Grid>
+</Window>

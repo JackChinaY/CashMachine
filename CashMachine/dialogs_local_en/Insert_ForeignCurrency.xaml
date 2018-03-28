@@ -1,0 +1,52 @@
+﻿<Window x:Class="CashMachine.dialogs_local_en.Insert_ForeignCurrency"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CashMachine.dialogs_local_en"
+        mc:Ignorable="d"
+        Title="Add " Icon="/favicon.ico" Height="678.013" Width="521.429" WindowStartupLocation="CenterScreen" FontSize="14">
+    <Grid>
+        <!--第一列 说明文字-->
+        <TextBlock Margin="29,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="外币编号" Height="22" Width="100" HorizontalAlignment="Left" TextAlignment="Right"/>
+        <TextBlock Margin="28,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="外币代码" Height="21" Width="100" HorizontalAlignment="Left" TextAlignment="Right"/>
+        <TextBlock Margin="28,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="外币缩写" Height="21" Width="100" HorizontalAlignment="Left" TextAlignment="Right"/>
+        <TextBlock Margin="31,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="外币符号" Height="22" Width="100" HorizontalAlignment="Left" TextAlignment="Right"/>
+        <TextBlock Margin="10,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="外币符号放置位置" Height="22" Width="121" HorizontalAlignment="Left" TextAlignment="Right"/>
+        <TextBlock Margin="26,304,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="千分位分隔符" Height="22" Width="105" HorizontalAlignment="Left" TextAlignment="Right"/>
+        <TextBlock Margin="31,356,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="小数点分隔符" Height="22" Width="100" HorizontalAlignment="Left" TextAlignment="Right"/>
+        <TextBlock Margin="31,406,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="小数点位数" Height="22" Width="100" HorizontalAlignment="Left" TextAlignment="Right"/>
+        <TextBlock Margin="31,459,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="汇率" Height="22" Width="100" HorizontalAlignment="Left" TextAlignment="Right"/>
+        <TextBlock Margin="31,511,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="标志位" Height="22" Width="100" HorizontalAlignment="Left" TextAlignment="Right"/>
+        <!--第二列 说明文字-->
+        <TextBlock Margin="405,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="（默认填0）" Height="20" Width="79" HorizontalAlignment="Left" TextAlignment="Left"/>
+        <TextBlock Margin="406,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="*" Height="13" Width="13" HorizontalAlignment="Left" TextAlignment="Left"/>
+        <TextBlock Margin="277,513,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="（√）表示使用外币" Height="20" Width="136" HorizontalAlignment="Left" TextAlignment="Left"/>
+        <TextBlock Margin="405,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="（默认填1）" Height="20" Width="79" HorizontalAlignment="Left" TextAlignment="Left"/>
+        <TextBlock Margin="405,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="（可以为空）" Height="20" Width="90" HorizontalAlignment="Left" TextAlignment="Left"/>
+        <TextBlock Margin="405,352,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="（即'.'号）" Height="20" Width="72" HorizontalAlignment="Left" TextAlignment="Left"/>
+        <TextBlock Margin="405,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="（即','号）" Height="20" Width="73" HorizontalAlignment="Left" TextAlignment="Left"/>
+        <!--输入框-->
+        <ComboBox x:Name="comboBox2_7_1" SelectedIndex="0" HorizontalAlignment="Left" Margin="151,52,0,0" VerticalAlignment="Top" Width="250" Height="30">
+            <ComboBoxItem Content="请选择外币编号" IsSelected="False"/>
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
+            <ComboBoxItem Content="4"/>
+            <ComboBoxItem Content="5"/>
+            <ComboBoxItem Content="6"/>
+        </ComboBox>
+        <TextBox x:Name="textBox2_7_1" Template="{StaticResource ResourceKey=FilletTextBox}" Text="0" HorizontalAlignment="Left" Width="250" Height="30" Margin="151,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox2_7_2" Template="{StaticResource ResourceKey=FilletTextBox}" ToolTip="如RMB、USA等" HorizontalAlignment="Left" Width="250" Height="30" Margin="151,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox2_7_3" Template="{StaticResource ResourceKey=FilletTextBox}" HorizontalAlignment="Left" Width="250" Height="30" Margin="151,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox2_7_4" Template="{StaticResource ResourceKey=FilletTextBox}" Text="1" HorizontalAlignment="Left" Width="250" Height="30" Margin="151,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox2_7_5" Template="{StaticResource ResourceKey=FilletTextBox}" Text="44" HorizontalAlignment="Left" Width="250" Height="30" Margin="151,298,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox2_7_6" Template="{StaticResource ResourceKey=FilletTextBox}" Text="46" HorizontalAlignment="Left" Width="250" Height="30" Margin="151,348,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox2_7_7" Template="{StaticResource ResourceKey=FilletTextBox}" Text="2" HorizontalAlignment="Left" Width="250" Height="30" Margin="151,400,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox2_7_8" Template="{StaticResource ResourceKey=FilletTextBox}" ToolTip="支持小数点后4位" HorizontalAlignment="Left" Width="250" Height="30" Margin="151,455,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <CheckBox x:Name="checkBox2_7_1" Content="" HorizontalAlignment="Left" Margin="179,514,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.867,0.288"/>
+        
+        <Button x:Name="button2_7_1" Style="{StaticResource ResourceKey=MyWpfButton}" Content="提交" HorizontalAlignment="Left" Margin="211,574,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="button2_7_1_Click"/>
+
+    </Grid>
+</Window>

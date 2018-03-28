@@ -1,0 +1,15 @@
+﻿<Window x:Class="CashMachine.dialogs_local_en.Department_Good_Choice"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CashMachine.dialogs_local_en"
+        mc:Ignorable="d"
+        Title="Good No Choice" Icon="/favicon.ico" FontSize="14" Height="634.401" Width="554.042" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <DataGrid x:Name="dataGrid" Style="{StaticResource ResourceKey=FilletDataGrid}" RowStyle="{StaticResource ResourceKey=FilletDataGridRow}"  CellStyle="{StaticResource ResourceKey=FilletDataGridCell}" HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top" Height="562" Width="409" Loaded="dataGrid_Loaded" FontSize="12">
+        </DataGrid>
+        <Button x:Name="button2_5_1" Style="{StaticResource ResourceKey=MyWpfButton}" Content="OK" HorizontalAlignment="Left" Margin="447,34,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="button2_5_1_Click"/>
+        <Button x:Name="button2_5_2" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Cancel" HorizontalAlignment="Left" Margin="447,86,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="button2_5_2_Click"/>
+    </Grid>
+</Window>

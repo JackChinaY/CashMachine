@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{191416EF-6A91-41BD-9B93-395B93DED14D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CashMachine</RootNamespace>
+    <AssemblyName>CashMachine</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>E:\文档（公共）\WebSite\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>E11E7C49860CF0D50254136D418D410D38DE6CBD</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CashMachine_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NPOI">
+      <HintPath>E:\大学课程\盐城国税\技术支持\NPOI 2.2.1 binary package\Release\Net40\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>E:\大学课程\盐城国税\技术支持\NPOI 2.2.1 binary package\Release\Net40\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>E:\大学课程\盐城国税\技术支持\NPOI 2.2.1 binary package\Release\Net40\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>E:\大学课程\盐城国税\技术支持\NPOI 2.2.1 binary package\Release\Net40\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.105.2, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\大学课程\收款机上位机\技术支持\WPF里sqlite.dll\sqlite-netFx40-static-binary-bundle-Win32-2010-1.0.105.2\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="dialogs_local_en\Day_Department.xaml.cs">
+      <DependentUpon>Day_Department.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="dialogs_local_en\Day_Moment.xaml.cs">
+      <DependentUpon>Day_Moment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="dialogs_local_en\Buyer_Query.xaml.cs">
+      <DependentUpon>Buyer_Query.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="dialogs_local_en\Currency_Choice .xaml.cs">
+      <DependentUpon>Currency_Choice .xaml</DependentUpon>
+    </Compile>
+    <Compile Include="dialogs_local_en\Good_Query.xaml.cs">
+      <DependentUpon>Good_Query.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="dialogs_local_en\Good_Tax_Choice.xaml.cs">
+      <DependentUpon>Good_Tax_Choice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="dialogs_local_en\Department_Good_Choice.xaml.cs">
+      <DependentUpon>Department_Good_Choice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="dialogs_local_en\Insert_Buyer.xaml.cs">
+      <DependentUpon>Insert_Buyer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="dialogs_local_en\Insert_Cashier.xaml.cs">
+      <DependentUpon>Insert_Cashier.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="dialogs_local_en\Insert_Department.xaml.cs">
+      <DependentUpon>Insert_Department.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="dialogs_local_en\Insert_ForeignCurrency.xaml.cs">
+      <DependentUpon>Insert_ForeignCurrency.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="dialogs_local_en\Insert_Header.xaml.cs">
+      <DependentUpon>Insert_Header.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="dialogs_local_en\Insert_Plu.xaml.cs">
+      <DependentUpon>Insert_Plu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="dialogs_local_en\Insert_Tax.xaml.cs">
+      <DependentUpon>Insert_Tax.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="dialogs_local_en\Moment_Cancel.xaml.cs">
+      <DependentUpon>Moment_Cancel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="dialogs_local_en\Moment_Department.xaml.cs">
+      <DependentUpon>Moment_Department.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="dialogs_local_en\Month_Department.xaml.cs">
+      <DependentUpon>Month_Department.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="dialogs_local_en\OpenFile.xaml.cs">
+      <DependentUpon>OpenFile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="dialogs_local_en\Update_Buyer.xaml.cs">
+      <DependentUpon>Update_Buyer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="dialogs_local_en\Update_Cashier.xaml.cs">
+      <DependentUpon>Update_Cashier.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="dialogs_local_en\Update_Department.xaml.cs">
+      <DependentUpon>Update_Department.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="dialogs_local_en\Update_ForeignCurrency.xaml.cs">
+      <DependentUpon>Update_ForeignCurrency.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="dialogs_local_en\Update_Header.xaml.cs">
+      <DependentUpon>Update_Header.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="dialogs_local_en\Update_Plu.xaml.cs">
+      <DependentUpon>Update_Plu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="dialogs_local_en\Update_Tax.xaml.cs">
+      <DependentUpon>Update_Tax.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="dialogs_local_en\Week_Department.xaml.cs">
+      <DependentUpon>Week_Department.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="entity\Entitys_Local.cs" />
+    <Compile Include="Factory_SerialPort.xaml.cs">
+      <DependentUpon>Factory_SerialPort.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login_EN.xaml.cs">
+      <DependentUpon>Login_EN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow_Local_EN.xaml.cs">
+      <DependentUpon>MainWindow_Local_EN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="utils\EthernetConnection.cs" />
+    <Compile Include="utils\NPOI.cs" />
+    <Compile Include="utils\SerialPortConnection.cs" />
+    <Compile Include="WaitTip.xaml.cs">
+      <DependentUpon>WaitTip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="utils\CommonUtils.cs" />
+    <Compile Include="utils\CheckUtils.cs" />
+    <Compile Include="utils\OperateFile.cs" />
+    <Compile Include="utils\SQLiteDBHelper.cs" />
+    <Compile Include="Window2.xaml.cs">
+      <DependentUpon>Window2.xaml</DependentUpon>
+    </Compile>
+    <Page Include="dialogs_local_en\Day_Department.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs_local_en\Day_Moment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs_local_en\Buyer_Query.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs_local_en\Currency_Choice .xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs_local_en\Good_Query.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="dialogs_local_en\Good_Tax_Choice.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs_local_en\Department_Good_Choice.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs_local_en\Insert_Buyer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs_local_en\Insert_Cashier.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs_local_en\Insert_Department.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs_local_en\Insert_ForeignCurrency.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs_local_en\Insert_Header.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs_local_en\Insert_Plu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs_local_en\Insert_Tax.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs_local_en\Moment_Cancel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs_local_en\Moment_Department.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs_local_en\Month_Department.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs_local_en\OpenFile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs_local_en\Update_Buyer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs_local_en\Update_Cashier.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs_local_en\Update_Department.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs_local_en\Update_ForeignCurrency.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs_local_en\Update_Header.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs_local_en\Update_Plu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs_local_en\Update_Tax.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs_local_en\Week_Department.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Factory_SerialPort.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login_EN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow_Local_EN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="WaitTip.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="favicon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

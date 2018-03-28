@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <item id="型号01">
+    <marginleft>80</marginleft>
+    <margintop>80</margintop>
+    <width>200</width>
+    <height>100</height>
+    <numbercount>4</numbercount>
+  </item>
+  <item id="型号02">
+    <marginleft>87</marginleft>
+    <margintop>80</margintop>
+    <width>260</width>
+    <height>115</height>
+    <numbercount>4</numbercount>
+  </item>
+  <item id="型号03">
+    <marginleft>90</marginleft>
+    <margintop>90</margintop>
+    <width>280</width>
+    <height>111</height>
+    <numbercount>5</numbercount>
+  </item>
+  <item id="型号04">
+    <marginleft>87</marginleft>
+    <margintop>80</margintop>
+    <width>260</width>
+    <height>115</height>
+    <numbercount>4</numbercount>
+  </item>
+  <item id="型号05">
+    <marginleft>87</marginleft>
+    <margintop>80</margintop>
+    <width>260</width>
+    <height>115</height>
+    <numbercount>4</numbercount>
+  </item>
+  <item id="型号06">
+    <marginleft>87</marginleft>
+    <margintop>80</margintop>
+    <width>260</width>
+    <height>115</height>
+    <numbercount>4</numbercount>
+  </item>
+  <item id="型号07">
+    <marginleft>87</marginleft>
+    <margintop>80</margintop>
+    <width>260</width>
+    <height>115</height>
+    <numbercount>4</numbercount>
+  </item>
+</root>

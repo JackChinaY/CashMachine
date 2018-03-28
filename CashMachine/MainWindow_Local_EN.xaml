@@ -1,0 +1,395 @@
+﻿<Window x:Class="CashMachine.MainWindow_Local_EN"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CashMachine"
+        mc:Ignorable="d"
+        Title=" ECR Software" FontSize="14" Icon="favicon.ico" OpacityMask="Black" BorderBrush="White" Foreground="Black" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
+    <!--MinHeight="500" MinWidth="1000" Height="600" Width="1210" -->
+    <DockPanel>
+        <!--底部状态栏 开始-->
+        <StackPanel DockPanel.Dock="Bottom" Height="22" Orientation="Vertical">
+            <StatusBar HorizontalAlignment="Stretch" FontSize="12">
+                <StatusBarItem x:Name="statusBarItem1" Content=""></StatusBarItem>
+                <StatusBarItem x:Name="statusBarItem2" Content=""></StatusBarItem>
+                <StatusBarItem x:Name="statusBarItem3" Content=""></StatusBarItem>
+                <StatusBarItem x:Name="statusBarItem4" Content=""></StatusBarItem>
+                <!--<TextBlock Name="boottextBlock1" Margin="0" TextWrapping="Wrap" Text="222" FontFamily="Microsoft YaHei"/>
+                <TextBlock Name="boottextBlock2" Margin="0" TextWrapping="Wrap" Text="333" FontFamily="Microsoft YaHei"/>-->
+            </StatusBar>
+        </StackPanel>
+        <!--顶部状态栏 结束-->
+        <StackPanel DockPanel.Dock="Top" Height="0"></StackPanel>
+        <!--左侧树形菜单选择区 开始-->
+        <Border BorderBrush="Black" BorderThickness="0,1,1,1">
+            <StackPanel DockPanel.Dock="Left" Width="250">
+                <TreeView HorizontalAlignment="Left" Name="tvFunctionList" BorderThickness="0" Margin="5,10,0,0">
+                    <TreeViewItem Header="Communication Setting" IsExpanded="True">
+                        <TreeViewItem Header="Communication Setting" Selected="TreeViewItem_1_1_Selected"  Margin="0,10,0,10"/>
+                    </TreeViewItem>
+                    <TreeViewItem Header="System Management" IsExpanded="True">
+                        <!--<TreeViewItem Header="机型选择" Selected="TreeViewItem_2_1_Selected"/>-->
+                        <!--<TreeViewItem Header="发票抬头" Selected="TreeViewItem_2_2_Selected"/>-->
+                        <TreeViewItem Header="Cashier Management" Selected="TreeViewItem_2_3_Selected" Margin="0,10,0,0"/>
+                        <TreeViewItem Header="Fiscal Information" Selected="TreeViewItem_2_4_Selected" Margin="0,10,0,0"/>
+                        <!--<TreeViewItem Header="折扣加成及发票限额" Selected="TreeViewItem_2_6_Selected"/>-->
+                        <TreeViewItem Header="Foreign Currency" Selected="TreeViewItem_2_7_Selected" Margin="0,10,0,10"/>
+                        <!--<TreeViewItem Header="单品" Selected="TreeViewItem_2_8_Selected"/>-->
+                    </TreeViewItem>
+                    <TreeViewItem Header="Stock Management" IsExpanded="True">
+                        <TreeViewItem Header="Goods Management" Selected="TreeViewItem_2_8_Selected" Margin="0,10,0,0"/>
+                        <TreeViewItem Header="Departments Setting" Selected="TreeViewItem_2_5_Selected" Margin="0,10,0,10"/>
+                    </TreeViewItem>
+                    <!--<TreeViewItem Header="Receipt Management">
+                        <TreeViewItem Header="Day Receipt" Selected="TreeViewItem_3_1_Selected"/>
+                        <TreeViewItem Header="Week Receipt" Selected="TreeViewItem_3_2_Selected"/>
+                        <TreeViewItem Header="Month Receipt" Selected="TreeViewItem_3_3_Selected"/>
+                        <TreeViewItem Header="Total Receipt" Selected="TreeViewItem_3_4_Selected"/>
+                    </TreeViewItem>-->
+                    <TreeViewItem Header="Buyers Management" IsExpanded="True">
+                        <TreeViewItem Header="Buyers Management" Selected="TreeViewItem_4_1_Selected" Height="30" Margin="0,10,0,0"/>
+                    </TreeViewItem>
+                </TreeView>
+            </StackPanel>
+        </Border>
+        <!--左侧树形菜单选择区 结束-->
+        <StackPanel DockPanel.Dock="Right" Height="0"></StackPanel>
+        <!--右侧内容显示区 开始-->
+        <Border BorderBrush="Black" BorderThickness="0,1,0,1">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                <Grid>
+                    <!--右侧内容显示区 -->
+                    <Grid Name="part" MinHeight="610" MinWidth="1000">
+                        <!--part1_1 通信设置 -->
+                        <Grid Name="part1_1" Visibility="Hidden">
+                            <DockPanel>
+                                <StackPanel DockPanel.Dock="Left" Height="0"></StackPanel>
+                                <StackPanel DockPanel.Dock="Right" Height="0"></StackPanel>
+                                <StackPanel DockPanel.Dock="Bottom" Height="0"></StackPanel>
+                                <StackPanel DockPanel.Dock="Top" Orientation="Vertical">
+                                    <StackPanel Height="20">
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                        <TextBlock Margin="23,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="COMMUNICATION SETTING" Height="27" HorizontalAlignment="Left" FontWeight="Bold" FontStyle="Italic" FontSize="16"/>
+                                    </StackPanel>
+                                    <StackPanel Height="10">
+                                    </StackPanel>
+                                </StackPanel>
+                                <Grid>
+                                    <TabControl x:Name="tabControl" Margin="5">
+                                        <TabItem Header="Ethernet Connection" Width="200" Height="30">
+                                            <Grid>
+                                                <TextBlock Margin="0,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="the available IP address of the host:" Height="22" Width="252" HorizontalAlignment="Left" TextAlignment="Right"/>
+                                                <TextBlock Margin="150,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Port:" ToolTip="The number of Port must be less than or equal to 65535" Height="22" Width="100" HorizontalAlignment="Left" TextAlignment="Right"/>
+                                                <!--<TextBlock Margin="737,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="e.g.  127.0.0.1" Height="22" Width="121" HorizontalAlignment="Left"/>-->
+                                                <TextBlock Margin="548,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="e.g.  6001" Height="22" Width="93" HorizontalAlignment="Left"/>
+                                                <TextBlock x:Name="textBox1_1_2_1" Text="" ToolTip="You can choose one from the following IP addresses to connect the computer" HorizontalAlignment="Left" Width="271" Height="268" Margin="271,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                                                <TextBox x:Name="textBox1_1_2_2" Text="6001" Template="{StaticResource ResourceKey=FilletTextBox}" HorizontalAlignment="Left" Width="250" Height="30" Margin="280,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MaxLength="5" TextChanged="textBox1_1_2_2_TextChanged"/>
+                                                <Button x:Name="button1_1_2_1" Style="{StaticResource ResourceKey=MyWpfButton}" Content="OPEN" HorizontalAlignment="Left" Margin="344,116,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="button1_1_2_1_Click"/>
+
+                                            </Grid>
+                                        </TabItem>
+                                        <TabItem Header="Serial Connection" Width="200" Height="30" Visibility="Hidden">
+                                            <Grid>
+                                                <TextBlock HorizontalAlignment="Left" Margin="240,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Serial Port" TextAlignment="Right" Height="19" Width="88"/>
+                                                <TextBlock HorizontalAlignment="Left" Margin="232,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Baud Rate" TextAlignment="Right" Height="19" Width="97"/>
+                                                <TextBlock HorizontalAlignment="Left" Margin="243,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Parity Bit" TextAlignment="Right" Height="19" Width="86"/>
+                                                <TextBlock HorizontalAlignment="Left" Margin="237,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Data Bits" TextAlignment="Right" Height="19" Width="92"/>
+                                                <TextBlock HorizontalAlignment="Left" Margin="238,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Stop Bit" TextAlignment="Right" Height="19" Width="91"/>
+                                                <ComboBox x:Name="chuankou" HorizontalAlignment="Left" Margin="339,34,0,0" VerticalAlignment="Top" Width="150"  Height="30" SelectedIndex="0" VerticalContentAlignment="Center">
+                                                </ComboBox>
+                                                <ComboBox x:Name="botelv" SelectedIndex="0" HorizontalAlignment="Left" Margin="339,79,0,0" VerticalAlignment="Top" Width="150" Height="30">
+                                                    <ComboBoxItem Content="115200"/>
+                                                    <ComboBoxItem Content="9600"/>
+                                                </ComboBox>
+                                                <ComboBox x:Name="checkFlag" HorizontalAlignment="Left" Margin="339,123,0,0" VerticalAlignment="Top" Width="150" Height="30" SelectedIndex="0">
+                                                    <ComboBoxItem Content="None"/>
+                                                    <ComboBoxItem Content="Odd"/>
+                                                    <ComboBoxItem Content="Even"/>
+                                                </ComboBox>
+                                                <ComboBox x:Name="dataFlag" HorizontalAlignment="Left" Margin="339,165,0,0" VerticalAlignment="Top" Width="150" Height="30" SelectedIndex="0">
+                                                    <ComboBoxItem Content="8"/>
+                                                </ComboBox>
+                                                <ComboBox x:Name="stopFlag" HorizontalAlignment="Left" Margin="339,212,0,0" VerticalAlignment="Top" Width="150" Height="30" SelectedIndex="0">
+                                                    <ComboBoxItem Content="1"/>
+                                                    <ComboBoxItem Content="0"/>
+                                                </ComboBox>
+                                                <Button x:Name="relistAvailablePorts" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Refresh" HorizontalAlignment="Left" Margin="513,33,0,0" VerticalAlignment="Top" Width="70" Height="30" Click="listAvailablePorts_Click"/>
+                                                <Button x:Name="openPort_button" Style="{StaticResource ResourceKey=MyWpfButton}" Content="OPEN" HorizontalAlignment="Left" Margin="368,271,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="openPort_Click"/>
+
+                                                <Button x:Name="sendData_pluDB" Style="{StaticResource ResourceKey=MyWpfButton}" Content="发送pluDB.db" HorizontalAlignment="Left" Margin="714,92,0,0" VerticalAlignment="Top" Width="190" Height="30" Click="sendData_pluDB_Click"/>
+                                                <Button x:Name="sendData_programmingDB" Style="{StaticResource ResourceKey=MyWpfButton}" Content="发送programmingDB.db" HorizontalAlignment="Left" Margin="714,169,0,0" VerticalAlignment="Top" Width="190" Height="30" Click="sendData_programmingDB_Click"/>
+                                                <Button x:Name="sendDataBase" Style="{StaticResource ResourceKey=MyWpfButton}" Content="发送dmDB__factory.db" HorizontalAlignment="Left" Margin="714,251,0,0" VerticalAlignment="Top" Width="190" Height="30" Click="sendData_dmDB_factory_Click"/>
+                                                <TextBox x:Name="txtSend" Template="{StaticResource ResourceKey=FilletTextBox}" HorizontalAlignment="Left" Width="187" Height="31" Margin="696,403,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+                                                <TextBox x:Name="txtReceive" Template="{StaticResource ResourceKey=FilletTextBox}" HorizontalAlignment="Left" Width="361" Height="33" Margin="315,393,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+                                            </Grid>
+                                        </TabItem>
+                                    </TabControl>
+                                </Grid>
+                            </DockPanel>
+                        </Grid>
+                        <!--part2_1 机器选择-->
+                        <Grid Name="part2_1" Visibility="Hidden">
+                        </Grid>
+                        <!--part2_2 发票抬头 -->
+                        <Grid Name="part2_2" Visibility="Hidden">
+                            <TextBlock Margin="23,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="发票抬头信息设置" Height="27" Width="147" HorizontalAlignment="Left" FontWeight="Bold" FontStyle="Italic" FontSize="16"/>
+                            <DataGrid x:Name="dataGrid2_2" Style="{StaticResource ResourceKey=FilletDataGrid}" RowStyle="{StaticResource ResourceKey=FilletDataGridRow}"  CellStyle="{StaticResource ResourceKey=FilletDataGridCell}" HorizontalAlignment="Left" Margin="113,63,0,0" VerticalAlignment="Top" Height="364" Width="587">
+                            </DataGrid>
+                            <Button x:Name="button2_2_1" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Add" HorizontalAlignment="Left" Margin="719,70,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="button2_2_1_Click"/>
+                            <Button x:Name="button2_2_2" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Refresh" HorizontalAlignment="Left" Margin="718,127,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="button2_2_2_Click"/>
+                            <Button x:Name="button2_2_3" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Modify" HorizontalAlignment="Left" Margin="718,188,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="button2_2_3_Click"/>
+                        </Grid>
+                        <!--part2_3 收银员 -->
+                        <Grid Name="part2_3" Visibility="Hidden">
+                            <TextBlock Margin="23,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="CASHIER MANAGEMENT" Height="27" Width="221" HorizontalAlignment="Left" FontWeight="Bold" FontStyle="Italic" FontSize="16"/>
+                            <Button x:Name="button2_3_1" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Add" HorizontalAlignment="Left" Margin="824,65,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="button2_3_1_Click"/>
+                            <Button x:Name="button2_3_2" Visibility="Hidden" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Refresh" HorizontalAlignment="Left" Margin="825,124,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="button2_3_2_Click"/>
+                            <Button x:Name="button2_3_3" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Delete" HorizontalAlignment="Left" Margin="825,132,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="button2_3_3_Click"/>
+                            <Button x:Name="button2_3_4" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Modify" HorizontalAlignment="Left" Margin="825,194,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="button2_3_4_Click"/>
+                            <DataGrid x:Name="dataGrid2_3" Style="{StaticResource ResourceKey=FilletDataGrid}" RowStyle="{StaticResource ResourceKey=FilletDataGridRow}"  CellStyle="{StaticResource ResourceKey=FilletDataGridCell}" HorizontalAlignment="Left" Margin="23,62,0,0" VerticalAlignment="Top" Height="531" Width="772">
+                            </DataGrid>
+                        </Grid>
+                        <!--part2_4 税率-->
+                        <Grid Name="part2_4" Visibility="Hidden">
+                            <TextBlock Margin="23,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="FISCAL INFORMATION" Height="27" HorizontalAlignment="Left" FontWeight="Bold" FontStyle="Italic" FontSize="16"/>
+                            <Button x:Name="button2_4_1" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Add" HorizontalAlignment="Left" Margin="796,69,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="button2_4_1_Click"/>
+                            <!--<Button x:Name="button2_4_2" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Refresh" HorizontalAlignment="Left" Margin="904,71,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="button2_4_2_Click"/>-->
+                            <Button x:Name="button2_4_3" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Delete" HorizontalAlignment="Left" Margin="796,197,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="button2_4_3_Click"/>
+                            <Button x:Name="button2_4_4" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Modify" HorizontalAlignment="Left" Margin="796,133,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="button2_4_4_Click"/>
+                            <DataGrid x:Name="dataGrid2_4" Style="{StaticResource ResourceKey=FilletDataGrid}" RowStyle="{StaticResource ResourceKey=FilletDataGridRow}"  CellStyle="{StaticResource ResourceKey=FilletDataGridCell}" HorizontalAlignment="Left" Margin="20,57,0,0" VerticalAlignment="Top" Height="501" Width="761">
+                            </DataGrid>
+                        </Grid>
+                        <!--part2_5 部类-->
+                        <Grid Name="part2_5" Visibility="Hidden">
+                            <TextBlock Margin="23,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="DEPARTMENTS ASSOCIATE SETTING" Height="27" HorizontalAlignment="Left" FontWeight="Bold" FontStyle="Italic" FontSize="16"/>
+                            <!--<Button x:Name="button2_5_1" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Add" HorizontalAlignment="Left" Margin="831,69,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="button2_5_1_Click"/>-->
+                            <Button x:Name="button2_5_2" Visibility="Hidden" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Refresh" HorizontalAlignment="Left" Margin="831,72,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="button2_5_2_Click"/>
+                            <!--<Button x:Name="button2_5_3" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Delete" HorizontalAlignment="Left" Margin="831,185,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="button2_5_3_Click"/>-->
+                            <Button x:Name="button2_5_4" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Modify" HorizontalAlignment="Left" Margin="831,64,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="button2_5_4_Click"/>
+                            <DataGrid x:Name="dataGrid2_5" Style="{StaticResource ResourceKey=FilletDataGrid}" RowStyle="{StaticResource ResourceKey=FilletDataGridRow}"  CellStyle="{StaticResource ResourceKey=FilletDataGridCell}" HorizontalAlignment="Left" Margin="20,57,0,0" VerticalAlignment="Top" Height="478" Width="783">
+                            </DataGrid>
+                        </Grid>
+                        <!--part2_6 折扣加成及发票限额-->
+                        <Grid Name="part2_6" Visibility="Hidden">
+                        </Grid>
+                        <!--part2_7 外币-->
+                        <Grid Name="part2_7" Visibility="Hidden">
+                            <TextBlock Margin="23,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="FOREIGN CURRENCY SETTING" Height="27" Width="314" HorizontalAlignment="Left" FontWeight="Bold" FontStyle="Italic" FontSize="16"/>
+                            <!--<Button x:Name="button2_7_1" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Add" HorizontalAlignment="Left" Margin="882,69,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="button2_7_1_Click"/>-->
+                            <Button x:Name="button2_7_2" Visibility="Hidden" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Refresh" HorizontalAlignment="Left" Margin="882,66,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="button2_7_2_Click"/>
+                            <!--<Button x:Name="button2_7_3" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Delete" HorizontalAlignment="Left" Margin="882,185,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="button2_7_3_Click"/>-->
+                            <Button x:Name="button2_7_4" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Modify" HorizontalAlignment="Left" Margin="882,69,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="button2_7_4_Click"/>
+                            <DataGrid x:Name="dataGrid2_7" Style="{StaticResource ResourceKey=FilletDataGrid}" RowStyle="{StaticResource ResourceKey=FilletDataGridRow}"  CellStyle="{StaticResource ResourceKey=FilletDataGridCell}" HorizontalAlignment="Left" Margin="20,57,0,0" VerticalAlignment="Top" Height="527" Width="840">
+                            </DataGrid>
+                        </Grid>
+                        <!--part2_8 单品-->
+                        <Grid Name="part2_8" Visibility="Hidden">
+                            <DockPanel>
+                                <StackPanel DockPanel.Dock="Left" Height="0"></StackPanel>
+                                <StackPanel DockPanel.Dock="Right" Height="0"></StackPanel>
+                                <StackPanel DockPanel.Dock="Top">
+                                    <StackPanel Height="20">
+                                    </StackPanel>
+                                    <StackPanel Height="40">
+                                        <DockPanel LastChildFill="False">
+                                            <StackPanel DockPanel.Dock="Bottom" Height="0"></StackPanel>
+                                            <StackPanel DockPanel.Dock="Top" Height="0"></StackPanel>
+                                            <StackPanel DockPanel.Dock="Left">
+                                                <TextBlock Margin="10,5,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="GOODS MANAGEMENT" FontWeight="Bold" FontStyle="Italic" FontSize="16"/>
+                                            </StackPanel>
+                                            <StackPanel DockPanel.Dock="Right"  Orientation="Horizontal">
+                                                <Button x:Name="button2_8_1" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Add" Margin="0,0,10,0" HorizontalAlignment="Right" Width="70" Height="30" Click="button2_8_1_Click"/>
+                                                <!--<Button x:Name="button2_8_2" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Refresh" Margin="0,0,10,0" HorizontalAlignment="Right" Width="70" Height="30" Click="button2_8_2_Click"/>-->
+                                                <Button x:Name="button2_8_3" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Delete" Margin="0,0,10,0" HorizontalAlignment="Right" Width="70" Height="30" Click="button2_8_3_Click"/>
+                                                <Button x:Name="button2_8_4" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Modify" Margin="0,0,10,0" HorizontalAlignment="Right" Width="70" Height="30" Click="button2_8_4_Click"/>
+                                                <Button x:Name="button2_8_5" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Query" Margin="0,0,10,0" HorizontalAlignment="Right" Width="70" Height="30" Click="button2_8_5_Click"/>
+                                                <Button x:Name="button2_8_6" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Import" Margin="0,0,10,0" HorizontalAlignment="Right" Width="70" Height="30" Click="button2_8_6_Click"/>
+                                                <Button x:Name="button2_8_7" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Database File" ToolTip="open the folder where the database file is located" HorizontalAlignment="Right" Margin="0,0,30,0" Width="100" Height="30" Click="button2_8_7_Click"/>
+                                            </StackPanel>
+                                        </DockPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                                <StackPanel DockPanel.Dock="Bottom">
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,3,0,3">
+                                        <!--<TextBlock x:Name="txtPagerInfo" Height="20" Text="The current page is【{0}】, each page shows【{1}】records, a total of【{2}】page, a total of【{3}】records. " Margin="0,0,10,0"/>-->
+                                        <TextBlock x:Name="txtPagerInfo" Height="20" Text="PER PAGE:    ALL:    PAGE:  /  " Margin="0,0,10,0"/>
+                                        <Button x:Name="btnFirstPage" Height="22" Width="50" Content="First"  Margin="0,0,10,0" Click="btnFirstPage_Click"/>
+                                        <Button x:Name="btnPageDown" Height="22" Width="70" Content="Next" Margin="0,0,10,0" Click="btnPageDown_Click"/>
+                                        <Button x:Name="btnPageUp" Height="22" Width="70" Content="Previous"  Margin="0,0,10,0" Click="btnPageUp_Click"/>
+                                        <Button x:Name="btnEndPage" Height="22" Width="50" Content="End" Margin="0,0,10,0" Click="btnEndPage_Click"/>
+                                    </StackPanel>
+                                </StackPanel>
+                                <Grid x:Name="gird2_8" SizeChanged="gird2_8_SizeChanged">
+                                    <DataGrid x:Name="dataGrid2_8" Style="{StaticResource ResourceKey=FilletDataGrid}" RowStyle="{StaticResource ResourceKey=FilletDataGridRow}" CellStyle="{StaticResource ResourceKey=FilletDataGridCell}" Margin="5,0,0,0" >
+                                    </DataGrid>
+                                </Grid>
+                            </DockPanel>
+                        </Grid>
+                        <!--part3_1 日报表-->
+                        <Grid Name="part3_1" Visibility="Hidden">
+                            <DockPanel>
+                                <StackPanel DockPanel.Dock="Left" Height="0"></StackPanel>
+                                <StackPanel DockPanel.Dock="Right" Height="0"></StackPanel>
+                                <StackPanel DockPanel.Dock="Bottom" Height="0"></StackPanel>
+                                <StackPanel DockPanel.Dock="Top" Orientation="Vertical">
+                                    <StackPanel Height="20">
+                                    </StackPanel>
+                                    <StackPanel Height="40" Orientation="Horizontal" VerticalAlignment="Center">
+                                        <TextBlock Margin="10,0,0,0" Text="日报表Refresh" Height="25" Width="100" FontWeight="Bold" FontStyle="Italic" FontSize="16"/>
+                                        <TextBlock Margin="100,0,0,0" Text="请选择Refresh目录" Height="25" FontSize="16"/>
+                                        <ComboBox x:Name="ComboBox3_1" SelectedIndex="0" Margin="10,0,0,0" Height="30" Width="200" FontSize="16">
+                                            <ComboBoxItem Content="部类日报表"/>
+                                            <ComboBoxItem Content="营业员支付总额日报表"/>
+                                            <ComboBoxItem Content="时段报表"/>
+                                            <ComboBoxItem Content="营业员取消日报表"/>
+                                            <ComboBoxItem Content="营业员退货日报表"/>
+                                            <ComboBoxItem Content="营业员更正日报表"/>
+                                            <ComboBoxItem Content="税率日报表"/>
+                                        </ComboBox>
+                                        <Button x:Name="button3_1_1" Style="{StaticResource ResourceKey=MyWpfButton}" Content="提交"  Margin="10,0,0,0" Width="70" Height="30" Click="button3_1_1_Click"/>
+                                    </StackPanel>
+                                </StackPanel>
+                                <Grid x:Name="gird3_1">
+                                    <DataGrid x:Name="dataGrid3_1" Style="{StaticResource ResourceKey=FilletDataGrid}" RowStyle="{StaticResource ResourceKey=FilletDataGridRow}" CellStyle="{StaticResource ResourceKey=FilletDataGridCell}" Margin="5,0,0,5" >
+                                    </DataGrid>
+                                </Grid>
+                            </DockPanel>
+                        </Grid>
+                        <!--part3_2 周报表-->
+                        <Grid Name="part3_2" Visibility="Hidden">
+                            <DockPanel>
+                                <StackPanel DockPanel.Dock="Left" Height="0"></StackPanel>
+                                <StackPanel DockPanel.Dock="Right" Height="0"></StackPanel>
+                                <StackPanel DockPanel.Dock="Bottom" Height="0"></StackPanel>
+                                <StackPanel DockPanel.Dock="Top" Orientation="Vertical">
+                                    <StackPanel Height="20">
+                                    </StackPanel>
+                                    <StackPanel Height="40" Orientation="Horizontal" VerticalAlignment="Center">
+                                        <TextBlock Margin="10,0,0,0" Text="周报表Refresh" Height="25" Width="100" FontWeight="Bold" FontStyle="Italic" FontSize="16"/>
+                                        <TextBlock Margin="100,0,0,0" Text="请选择Refresh目录" Height="25" FontSize="16"/>
+                                        <ComboBox x:Name="ComboBox3_2" SelectedIndex="0" Margin="10,0,0,0" Height="30" Width="200" FontSize="16">
+                                            <ComboBoxItem Content="部类周报表"/>
+                                            <ComboBoxItem Content="营业员支付总额周报表"/>
+                                            <ComboBoxItem Content="营业员取消周报表"/>
+                                            <ComboBoxItem Content="营业员退货周报表"/>
+                                            <ComboBoxItem Content="营业员更正周报表"/>
+                                            <ComboBoxItem Content="税率周报表"/>
+                                        </ComboBox>
+                                        <Button x:Name="button3_2_1" Style="{StaticResource ResourceKey=MyWpfButton}" Content="提交"  Margin="10,0,0,0" Width="70" Height="30" Click="button3_2_1_Click"/>
+                                    </StackPanel>
+                                </StackPanel>
+                                <Grid>
+                                    <DataGrid x:Name="dataGrid3_2" Style="{StaticResource ResourceKey=FilletDataGrid}" RowStyle="{StaticResource ResourceKey=FilletDataGridRow}" CellStyle="{StaticResource ResourceKey=FilletDataGridCell}" Margin="5,0,0,5" >
+                                    </DataGrid>
+                                </Grid>
+                            </DockPanel>
+                        </Grid>
+                        <!--part3_3 月报表-->
+                        <Grid Name="part3_3" Visibility="Hidden">
+                            <DockPanel>
+                                <StackPanel DockPanel.Dock="Left" Height="0"></StackPanel>
+                                <StackPanel DockPanel.Dock="Right" Height="0"></StackPanel>
+                                <StackPanel DockPanel.Dock="Bottom" Height="0"></StackPanel>
+                                <StackPanel DockPanel.Dock="Top" Orientation="Vertical">
+                                    <StackPanel Height="20">
+                                    </StackPanel>
+                                    <StackPanel Height="40" Orientation="Horizontal" VerticalAlignment="Center">
+                                        <TextBlock Margin="10,0,0,0" Text="月报表Refresh" Height="25" Width="100" FontWeight="Bold" FontStyle="Italic" FontSize="16"/>
+                                        <TextBlock Margin="100,0,0,0" Text="请选择Refresh目录" Height="25" FontSize="16"/>
+                                        <ComboBox x:Name="ComboBox3_3" SelectedIndex="0" Margin="10,0,0,0" Height="30" Width="200" FontSize="16">
+                                            <ComboBoxItem Content="部类月报表"/>
+                                            <ComboBoxItem Content="营业员支付总额月报表"/>
+                                            <ComboBoxItem Content="营业员取消月报表"/>
+                                            <ComboBoxItem Content="营业员退货月报表"/>
+                                            <ComboBoxItem Content="营业员更正月报表"/>
+                                            <ComboBoxItem Content="税率月报表"/>
+                                        </ComboBox>
+                                        <Button x:Name="button3_3_1" Style="{StaticResource ResourceKey=MyWpfButton}" Content="提交"  Margin="10,0,0,0" Width="70" Height="30" Click="button3_3_1_Click"/>
+                                    </StackPanel>
+                                </StackPanel>
+                                <Grid>
+                                    <DataGrid x:Name="dataGrid3_3" Style="{StaticResource ResourceKey=FilletDataGrid}" RowStyle="{StaticResource ResourceKey=FilletDataGridRow}" CellStyle="{StaticResource ResourceKey=FilletDataGridCell}" Margin="5,0,0,5" >
+                                    </DataGrid>
+                                </Grid>
+                            </DockPanel>
+                        </Grid>
+                        <!--part3_4 总报表-->
+                        <Grid Name="part3_4" Visibility="Hidden">
+                            <DockPanel>
+                                <StackPanel DockPanel.Dock="Left" Height="0"></StackPanel>
+                                <StackPanel DockPanel.Dock="Right" Height="0"></StackPanel>
+                                <StackPanel DockPanel.Dock="Bottom" Height="0"></StackPanel>
+                                <StackPanel DockPanel.Dock="Top" Orientation="Vertical">
+                                    <StackPanel Height="20">
+                                    </StackPanel>
+                                    <StackPanel Height="40" Orientation="Horizontal" VerticalAlignment="Center">
+                                        <TextBlock Margin="10,0,0,0" Text="总报表Refresh" Height="25" Width="100" FontWeight="Bold" FontStyle="Italic" FontSize="16"/>
+                                        <TextBlock Margin="100,0,0,0" Text="请选择Refresh目录" Height="25" FontSize="16"/>
+                                        <ComboBox x:Name="ComboBox3_4" SelectedIndex="0" Margin="10,0,0,0" Height="30" Width="200" FontSize="16">
+                                            <ComboBoxItem Content="部门总报表"/>
+                                            <ComboBoxItem Content="营业员取消总报表"/>
+                                            <ComboBoxItem Content="营业员退货总报表"/>
+                                            <ComboBoxItem Content="营业员更正总报表"/>
+                                            <ComboBoxItem Content="营业员税总报表"/>
+                                            <ComboBoxItem Content="单品总报表"/>
+                                        </ComboBox>
+                                        <Button x:Name="button3_4_1" Style="{StaticResource ResourceKey=MyWpfButton}" Content="提交"  Margin="10,0,0,0" Width="70" Height="30" Click="button3_4_1_Click"/>
+                                    </StackPanel>
+                                </StackPanel>
+                                <Grid>
+                                    <DataGrid x:Name="dataGrid3_4" Style="{StaticResource ResourceKey=FilletDataGrid}" RowStyle="{StaticResource ResourceKey=FilletDataGridRow}" CellStyle="{StaticResource ResourceKey=FilletDataGridCell}" Margin="5,0,0,5" >
+                                    </DataGrid>
+                                </Grid>
+                            </DockPanel>
+                        </Grid>
+                        <!--part4_1 客户管理 Buyers Management-->
+                        <Grid Name="part4_1" Visibility="Hidden">
+                            <DockPanel>
+                                <StackPanel DockPanel.Dock="Left" Height="0"></StackPanel>
+                                <StackPanel DockPanel.Dock="Right" Height="0"></StackPanel>
+                                <StackPanel DockPanel.Dock="Top">
+                                    <StackPanel Orientation="Vertical">
+                                        <StackPanel Height="20">
+                                        </StackPanel>
+                                        <StackPanel Height="40">
+                                            <DockPanel LastChildFill="False">
+                                                <StackPanel DockPanel.Dock="Bottom" Height="0"></StackPanel>
+                                                <StackPanel DockPanel.Dock="Top" Height="0"></StackPanel>
+                                                <StackPanel DockPanel.Dock="Left">
+                                                    <TextBlock Margin="10,5,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="BUYERS MANAGEMENT" FontWeight="Bold" FontStyle="Italic" FontSize="16"/>
+                                                </StackPanel>
+                                                <StackPanel DockPanel.Dock="Right"  Orientation="Horizontal">
+                                                    <Button x:Name="button4_1_1" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Add" Margin="0,0,10,0" HorizontalAlignment="Right" Width="70" Height="30" Click="button4_1_1_Click"/>
+                                                    <!--<Button x:Name="button4_1_2" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Refresh" Margin="0,0,10,0" HorizontalAlignment="Right" Width="70" Height="30" Click="button4_1_2_Click"/>-->
+                                                    <Button x:Name="button4_1_3" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Delete" Margin="0,0,10,0" HorizontalAlignment="Right" Width="70" Height="30" Click="button4_1_3_Click"/>
+                                                    <Button x:Name="button4_1_4" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Modify" Margin="0,0,10,0" HorizontalAlignment="Right" Width="70" Height="30" Click="button4_1_4_Click"/>
+                                                    <Button x:Name="button4_1_5" Style="{StaticResource ResourceKey=MyWpfButton}" Content="Query" Margin="0,0,30,0" HorizontalAlignment="Right" Width="70" Height="30" Click="button4_1_5_Click"/>
+                                                </StackPanel>
+                                            </DockPanel>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                                <StackPanel DockPanel.Dock="Bottom">
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,3,0,3">
+                                        <TextBlock x:Name="txtPagerInfo_buyer" Height="20" Text="PER PAGE:    ALL:    PAGE:  /  " Margin="0,0,10,0"/>
+                                        <Button x:Name="btnFirstPage_buyer" Height="22" Width="50" Content="First"  Margin="0,0,10,0" Click="btnFirstPage_buyer_Click"/>
+                                        <Button x:Name="btnPageDown_buyer" Height="22" Width="70" Content="Next" Margin="0,0,10,0" Click="btnPageDown_buyer_Click"/>
+                                        <Button x:Name="btnPageUp_buyer" Height="22" Width="70" Content="Previous"  Margin="0,0,10,0" Click="btnPageUp_buyer_Click"/>
+                                        <Button x:Name="btnEndPage_buyer" Height="22" Width="50" Content="End" Margin="0,0,10,0" Click="btnEndPage_buyer_Click"/>
+                                    </StackPanel>
+                                </StackPanel>
+                                <Grid x:Name="gird4_1" SizeChanged="gird4_1_SizeChanged">
+                                    <DataGrid x:Name="dataGrid4_1" Style="{StaticResource ResourceKey=FilletDataGrid}" RowStyle="{StaticResource ResourceKey=FilletDataGridRow}" CellStyle="{StaticResource ResourceKey=FilletDataGridCell}" Margin="5,0,0,0" >
+                                    </DataGrid>
+                                </Grid>
+                            </DockPanel>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </ScrollViewer>
+        </Border>
+        <!--右侧内容显示区 结束-->
+    </DockPanel>
+</Window>
