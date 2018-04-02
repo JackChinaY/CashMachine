@@ -185,12 +185,13 @@ namespace CheckUtils
                 }
                 return dataTable;
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 if (fs != null)
                 {
                     fs.Close();
                 }
+                MessageBox.Show("Error:" + e.Message, "Information", MessageBoxButton.OK, MessageBoxImage.Error);
                 return null;
             }
         }
