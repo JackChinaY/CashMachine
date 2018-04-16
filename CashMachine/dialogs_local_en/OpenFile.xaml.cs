@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
+using System.Text;
 using System.Windows;
 
 namespace CashMachine
@@ -72,7 +73,7 @@ namespace CashMachine
                 //SQLite数据库，此处连接的是goodsDB
                 sqliteDBHelper = new SQLiteDBHelper(dataBase);
                 int number_max = 1;
-                //查询商品编号
+                //-----------------------查询商品编号---------------------
                 //SQL语句
                 string sql_max = "SELECT MAX(Number) AS MAXNUM FROM Goods_Info";
                 //执行查询，结果为DataTable类型
@@ -87,7 +88,49 @@ namespace CashMachine
                 {
                     number_max = (Convert.ToInt32(dt_max.Rows[0]["MAXNUM"].ToString()) + 1);//最大值加1
                 }
-                //插入数据
+                //-----------------------查询商品Barcode---------------------
+                //SQL语句
+                string sql_goods = "SELECT Number,Name,Barcode FROM Goods_Info";
+                //执行查询，结果为DataTable类型
+                DataTable dt_goods = sqliteDBHelper.ExecuteDataTable(sql_goods, null);
+                //声明一个集合
+                List<string> barcodeList = new List<string>();
+                //删除相同的Barcode，遍历文件中的数组
+                try
+                {
+                    for (int i = dt.Rows.Count - 1; i >= 0; i--)
+                    {
+                        if (dt.Rows[i]["Barcode"].ToString().Equals(""))//若为空
+                        {
+                            continue;//如果barcode字段为空，则进行下一轮循环
+                        }
+                        else
+                        {
+                            //遍历数据库中的数组
+                            for (int j = 0; j < dt_goods.Rows.Count; j++)
+                            {
+                                if (dt.Rows[i]["Barcode"].ToString().Equals(dt_goods.Rows[j]["Barcode"].ToString()))//若不为空
+                                {
+                                    //Console.WriteLine(dt.Rows[i]["Barcode"].ToString());
+                                    //如果和数据库中的barcode相同，则删除该文件中元素
+                                    barcodeList.Add(dt.Rows[i]["Barcode"].ToString());
+                                    dt.Rows[i].Delete();
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Import failure, the data format is wrong!", "Information", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+                //Console.WriteLine(dt.Rows.Count);
+                //确认完全删除
+                dt.AcceptChanges();
+                //Console.WriteLine(dt.Rows.Count);
+                //-----------------------插入数据---------------------
                 //SQL语句
                 string sql = "INSERT INTO Goods_Info (Number,Name,Barcode,Price,RRP,Tax_Index,Stock_Control,Stock_Amount,Currency,Used)"
                     + " VALUES(@Number,@Name,@Barcode,@Price,@RRP,@Tax_Index,@Stock_Control,@Stock_Amount,@Currency,@Used)";
@@ -126,7 +169,23 @@ namespace CashMachine
 
                 if (dt.Rows.Count == p)
                 {
-                    MessageBox.Show("Import successfully, total：" + p + "  records！", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                    StringBuilder temp = new StringBuilder();
+                    if (barcodeList.Count != 0)
+                    {
+                        temp.Append("\r\n Warning: " + barcodeList.Count + " records submitted failed, because these barcodes already existed in Database，these are: ");
+                        for (int i = 0; i < barcodeList.Count; i++)
+                        {
+                            if (i == barcodeList.Count - 1)
+                            {
+                                temp.Append(barcodeList[i] + ". ");
+                            }
+                            else
+                            {
+                                temp.Append(barcodeList[i] + ", ");
+                            }
+                        }
+                    }
+                    MessageBox.Show("Information: " + p + " records submitted successfully in this file !" + temp.ToString(), "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                     this.Close();
                 }
                 //else
