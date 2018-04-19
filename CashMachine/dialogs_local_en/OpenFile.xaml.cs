@@ -70,6 +70,13 @@ namespace CashMachine
             else
             {
                 DataTable dt = OperationExcel.ExcelToDataTable(textBox1.Text, true);
+                //for (int i = 0; i < dt.Rows.Count; i++)
+                //{
+                //    for (int j = 0; j < dt.Columns.Count; j++)
+                //    {
+                //        Console.WriteLine(dt.Rows[i][j]);
+                //    }
+                //}
                 //SQLite数据库，此处连接的是goodsDB
                 sqliteDBHelper = new SQLiteDBHelper(dataBase);
                 int number_max = 1;

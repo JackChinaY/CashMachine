@@ -17,11 +17,12 @@ namespace CashMachine.dialogs_local_en
         //声明一个SQLite数据库
         SQLiteDBHelper sqliteDBHelper = null;
         public string Number { get; set; }
+        public bool isHaveData = false;
         //无参构造函数
         public Department_Good_Choice()
         {
-            InitializeComponent();   
-            
+            InitializeComponent();
+
         }
         //有参构造函数
         public Department_Good_Choice(string dataBase)
@@ -50,10 +51,11 @@ namespace CashMachine.dialogs_local_en
             {
                 dataGrid.ItemsSource = null;//先清空表格内容
                 DataTable dt_temp = new DataTable();//新建临时表
-                dt_temp.Columns.Add(new DataColumn("Tip"));//添加列
-                dt_temp.Rows.Add(dt_temp.NewRow());//添加行
-                dt_temp.Rows[0]["Tip"] = "No result！";//设置行内容
+                dt_temp.Columns.Add(new DataColumn("No data！"));//添加列
+                //dt_temp.Rows.Add(dt_temp.NewRow());//添加行
+                //dt_temp.Rows[0]["Tip"] = "No result！";//设置行内容
                 dataGrid.ItemsSource = dt_temp.DefaultView;//把表格放到控件中
+                isHaveData = false;
                 return;
             }
             //以下为给新添加的中文字段赋值
@@ -63,19 +65,23 @@ namespace CashMachine.dialogs_local_en
             }
             //将结果集绑定到DataGrid
             dataGrid.ItemsSource = dt.DefaultView;
+            isHaveData = true;
         }
         /// <summary>
         /// 元素即将要被渲染时触发，此函数用在表格所在对话框还没弹出的情况中使用，此函数在控件初始化后自动加载，获取对控件属性的控制
         /// </summary>
         private void dataGrid_Loaded(object sender, RoutedEventArgs e)
         {
-            //count是dt表格中前若干列标题是英文的字段数，也就是select查询的的字段数
-            int count = 0;
-            //以下为设置字段宽度
-            this.dataGrid.Columns[count++].Width = 60;
-            this.dataGrid.Columns[count++].Width = 120;
-            this.dataGrid.Columns[count++].Width = 110;
-            this.dataGrid.Columns[count++].Width = 60;
+            if (isHaveData)
+            {
+                //count是dt表格中前若干列标题是英文的字段数，也就是select查询的的字段数
+                int count = 0;
+                //以下为设置字段宽度
+                this.dataGrid.Columns[count++].Width = 60;
+                this.dataGrid.Columns[count++].Width = 120;
+                this.dataGrid.Columns[count++].Width = 110;
+                this.dataGrid.Columns[count++].Width = 60;
+            }
         }
         /// <summary>
         /// 提交

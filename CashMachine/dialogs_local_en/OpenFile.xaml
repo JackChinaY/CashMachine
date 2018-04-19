@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="Import Goods" Icon="/favicon.ico" Height="282.446" Width="598.54" FontSize="13" WindowStartupLocation="CenterScreen">
     <Grid>
-        <TextBlock Margin="15,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="File Path:" Height="20" Width="64" HorizontalAlignment="Left" TextAlignment="Right" />
+        <TextBlock Margin="7,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="File Path:" Height="20" Width="86" HorizontalAlignment="Left" TextAlignment="Right" />
         <!--<TextBlock Margin="11,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="该excel表中，第一行是否为标题栏" Height="22" Width="213" HorizontalAlignment="Left" TextAlignment="Right"/>-->
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Width="430" Height="29" Margin="85,61,0,0" VerticalAlignment="Top" FontSize="11" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Width="418" Height="29" Margin="97,61,0,0" VerticalAlignment="Top" FontSize="11" VerticalContentAlignment="Center"/>
         <!--<ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Margin="255,141,0,0" VerticalAlignment="Top" Width="80" Height="27" SelectedIndex="0"  VerticalContentAlignment="Center">-->
         <!--<ComboBoxItem Content="是"/>-->
         <!--<ComboBoxItem Content="否"/>-->
