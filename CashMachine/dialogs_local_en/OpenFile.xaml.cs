@@ -39,6 +39,7 @@ namespace CashMachine
             this.dataBase = goodsDB;
             this.headFlag = true;
             this.flag = false;
+
             this.ResizeMode = ResizeMode.CanMinimize;//禁用最大化按钮
         }
         /// <summary>
@@ -47,6 +48,7 @@ namespace CashMachine
         private void button2_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
+            dialog.RestoreDirectory = true;//控制对话框在关闭之前是否恢复当前目录,XP系统底层会更改working directory，而win7以上不会更改，所以对话框在关闭之前要恢复当前目录
             dialog.Multiselect = false;//该值确定是否可以选择多个文件
             dialog.Title = "Please select the file";
             dialog.Filter = "excel(*.xls,*.xlsx*)|*.xls;*.xlsx";
@@ -95,6 +97,7 @@ namespace CashMachine
                 {
                     number_max = (Convert.ToInt32(dt_max.Rows[0]["MAXNUM"].ToString()) + 1);//最大值加1
                 }
+                //MessageBox.Show("输出：" + number_max, "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 //-----------------------查询商品Barcode---------------------
                 //SQL语句
                 string sql_goods = "SELECT Number,Name,Barcode FROM Goods_Info";
@@ -173,7 +176,6 @@ namespace CashMachine
                 }
                 //执行SQL，并判断成功与否
                 p = sqliteDBHelper.ExecuteNonQueryList(sql, parametersList);
-
                 if (dt.Rows.Count == p)
                 {
                     StringBuilder temp = new StringBuilder();
@@ -195,10 +197,6 @@ namespace CashMachine
                     MessageBox.Show("Information: " + p + " records submitted successfully in this file !" + temp.ToString(), "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                     this.Close();
                 }
-                //else
-                //{
-                //    MessageBox.Show("Import failure!", "Information", MessageBoxButton.OK, MessageBoxImage.Error);
-                //}
             }
         }
     }

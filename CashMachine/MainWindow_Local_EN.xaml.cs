@@ -1796,7 +1796,7 @@ namespace CashMachine
             }
             catch (Exception ee)
             {
-                MessageBox.Show("The operation failed, please try again. Possible causes:" + ee.Message, "Information", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("The operation failed(goodsDB), please try again. Possible causes:" + ee.Message, "Information", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
         ///<summary>
